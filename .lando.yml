@@ -1,0 +1,15 @@
+name: catalyst-test
+recipe: lamp
+config:
+  php: 7.4
+services:
+  appserver:
+    type: php
+    build_as_root:
+      - composer install
+  database:
+    type: mysql
+    creds:
+      database: mydb
+      user: myuser
+      password: mypassword
